@@ -4,8 +4,6 @@ ARG TEST_ENV
 
 WORKDIR /app
 
-LABEL name="grounding_dino"
-
 RUN conda update conda -y
 
 RUN --mount=type=cache,target="/var/cache/apt",sharing=locked \
