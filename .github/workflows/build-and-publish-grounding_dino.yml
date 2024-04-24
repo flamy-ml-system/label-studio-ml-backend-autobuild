@@ -1,4 +1,4 @@
-name: Old Build and publish grounding_dino
+name: Build and publish grounding_dino
 
 on:
   workflow_dispatch:  # click the button on Github repo!
