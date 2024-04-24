@@ -1,7 +1,7 @@
 
 This is a fork that should have Docker autobuilds so that I (or you) don't have to build them manually.
 
-I've also modified the [`docker-compose.yml`](https://github.com/flamy-ml-system/label-studio-ml-backend-autobuild/blob/master/label_studio_ml/examples/grounding_dino/docker-compose.yml) which should be all you need to run it.
+I currently only set up grounding-dino and I modified the `docker-compose.yml` so that should be all you need.
 
 The autobuilds should publish around 7:00 AM UTC (2:00 AM EST or 3:00 AM EDT, Eastern Daylight Savings Time) on Sunday.
 
