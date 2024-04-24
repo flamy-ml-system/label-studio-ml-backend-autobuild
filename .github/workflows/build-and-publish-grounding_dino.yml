@@ -1,0 +1,31 @@
+name: Old Build and publish grounding_dino
+
+on:
+  workflow_dispatch:  # click the button on Github repo!
+
+# Defines two custom environment variables for the workflow. These are used for the Container registry domain, and a name for the Docker image that this workflow builds.
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: flamy-ml-system/grounding_dino
+
+# There is a single job in this workflow. It's configured to run on the latest available version of Ubuntu.
+jobs:
+  build-and-push-image:
+    runs-on: ubuntu-latest
+    # Sets the permissions granted to the `GITHUB_TOKEN` for the actions in this job.
+    permissions:
+      contents: read
+      packages: write
+      # 
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: publish
+        uses: pennsignals/publish_docker-compose@v0.1.0
+        with:
+          version: '0.2.6-rc.1' # optional
+          docker_compose: 'label_studio_ml/examples/grounding_dino/docker-compose-build.yml' # required
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+
+
