@@ -1,3 +1,17 @@
+
+This is a fork that should have Docker autobuilds so that I (or you) don't have to build them manually.
+
+I've also modified the [`docker-compose.yml`](https://github.com/flamy-ml-system/label-studio-ml-backend-autobuild/blob/master/label_studio_ml/examples/grounding_dino/docker-compose.yml) which should be all you need to run it.
+
+The autobuilds should publish around 7:00 AM UTC (2:00 AM EST or 3:00 AM EDT, Eastern Daylight Savings Time) on Sunday.
+
+(It merges from the upstream repo at 6:50 AM UTC and right after merging starts building which takes about a minute and a half so as long as there is nothing stopping a merge it should publish at 6:52 or 6:53 AM UTC but you should always give it some wiggle room to do its thing.)
+<h3>Autobuilds will not build and publish if no changes were made upstream.</h3>
+
+<br>
+<br>
+
+
 # What is the Label Studio ML backend?
 
 The Label Studio ML backend is an SDK that lets you wrap your machine learning code and turn it into a web server.
