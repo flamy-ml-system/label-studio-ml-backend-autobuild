@@ -1,7 +1,7 @@
 
 This is a fork that should have Docker autobuilds so that I (or you) don't have to build them manually.
 
-I currently only set up grounding-dino and I modified the `docker-compose.yml` so that should be all you need.
+I currently only set up grounding_dino and I modified the `docker-compose.yml` so that should be all you need.
 
 The autobuilds should publish around 7:00 AM UTC (2:00 AM EST or 3:00 AM EDT, Eastern Daylight Savings Time) on Sunday.
 
