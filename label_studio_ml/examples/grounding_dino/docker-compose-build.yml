@@ -6,7 +6,6 @@ services:
     image: heartexlabs/label-studio-ml-backend:grnddino-master
     build:
       context: .
-      target: flamy-ml-system/grounding_dino
       args:
         TEST_ENV: ${TEST_ENV}
 # Increase the memory limit if you USE_SAM=true on CPU machine
