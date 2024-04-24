@@ -1,10 +1,10 @@
-LABEL name="flamy-ml-system/grounding_dino"
-
 FROM pytorch/pytorch:2.1.2-cuda12.1-cudnn8-runtime
 ARG DEBIAN_FRONTEND=noninteractive
 ARG TEST_ENV
 
 WORKDIR /app
+
+LABEL name="grounding_dino"
 
 RUN conda update conda -y
 
