@@ -38,10 +38,10 @@ jobs:
       with:
         target_sync_branch: master
         # REQUIRED 'target_repo_token' exactly like this!
-        target_repo_token: ${{ secrets.FLAMY_ML_SYNC_TOKEN }}
+        target_repo_token: ${{ secrets.UPSTREAM_SYNC_TOKEN }}
         upstream_sync_branch: master
         upstream_sync_repo: HumanSignal/label-studio-ml-backend
-        upstream_repo_access_token: ${{ secrets.UPSTREAM_REPO_SECRET }}
+        upstream_repo_access_token: ${{ secrets.UPSTREAM_SYNC_TOKEN }}
 
         # Set test_mode true during manual dispatch to run tests instead of the true action!!
         test_mode: ${{ inputs.sync_test_mode }}
@@ -52,14 +52,14 @@ jobs:
       uses: mathze/workflow-dispatch-action@v1.1.0
       with:
         workflow-name: build-and-publish-grounding_dino.yml
-        token: ${{ secrets.FLAMY_ML_SYNC_TOKEN }}
+        token: ${{ secrets.UPSTREAM_SYNC_TOKEN }}
 
     - name: Build and Publish mmdetection
       if: ${{ (steps.sync.outputs.has_new_commits == 'true' && inputs.sync_test_mode != true) || inputs.force_build_and_publish == true }}
       uses: mathze/workflow-dispatch-action@v1.1.0
       with:
         workflow-name: build-and-publish-mmdetection.yml
-        token: ${{ secrets.FLAMY_ML_SYNC_TOKEN }}
+        token: ${{ secrets.UPSTREAM_SYNC_TOKEN }}
         
     - name: New commits
       if: ${{ steps.sync.outputs.has_new_commits == 'true' }}
